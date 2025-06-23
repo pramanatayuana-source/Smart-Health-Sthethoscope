@@ -13,7 +13,7 @@ NOTE: If you have another NDK version, you can change the required ndkVersion in
 
 ## DEBUGGING
 
-The .vscode file contains basic launch parameters for debugging this project
+The .vscode file contains basic launch parameters for debugging this project on vscode
 
 ## BUILDING
 
