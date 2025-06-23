@@ -13,6 +13,13 @@ NOTE: If you have another NDK version, you can change the required ndkVersion in
 
 ## DEBUGGING
 
+To set it up :
+
+1. Make sure your have set up flutter properly (run `flutter doctor` to check)
+2. Git clone the repo
+3. Start up an emulator / connect an android device with USB Debugging
+4. If you are on vscode, simply run and debug (`F5`).
+
 The .vscode file contains basic launch parameters for debugging this project on vscode
 
 ## BUILDING
