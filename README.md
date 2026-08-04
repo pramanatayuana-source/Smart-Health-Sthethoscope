@@ -32,7 +32,7 @@ NOTE: Only EN and ID is supported. Flavor definition needs to be in **UPPERCASE*
 
 **Example:**
 
-`flutter build apk --flavor ID --dart-define id`
+`flutter build apk --flavor ID --dart-define LANG=id`
 
 Builds an application with Indonesian as the locale.
 

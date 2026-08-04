@@ -15,7 +15,11 @@ class FunkyBar extends StatelessWidget {
     var value = Random(seed).nextDouble() * 0.1;
     return Stack(
       children: [
-        LinearProgressIndicator(value: value, minHeight: 32, color: Colors.teal,),
+        LinearProgressIndicator(
+          value: value,
+          minHeight: 32,
+          color: Colors.teal,
+        ),
         SizedBox(
           height: 32,
           width: double.infinity,
@@ -61,7 +65,11 @@ class ResultPage extends StatelessWidget {
 
     var fileDate = FileParser.toDateObject(filePath);
     fileDate ??= DateTime.now();
-    var seed = fileDate.day * 1000 + fileDate.month * 100 + fileDate.year * 10 + fileDate.millisecond;
+    var seed =
+        fileDate.day * 1000 +
+        fileDate.month * 100 +
+        fileDate.year * 10 +
+        fileDate.millisecond;
 
     return Scaffold(
       appBar: AppBar(title: Text(localizations.diagnose)),
@@ -90,6 +98,10 @@ class ResultPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: FunkyBar(label: "COPD", seed: seed + 2),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FunkyBar(label: "BRONCHITIS", seed: seed + 3),
             ),
           ],
         ),
