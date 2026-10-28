@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smart_health_monitor/l10n/app_localizations.dart';
 
-const String kAppName = "RESPIRA";
 const String kAppVersion = "1.0.0";
 
 class AboutPage extends StatelessWidget {
@@ -89,18 +88,14 @@ class _AboutScreen extends StatelessWidget {
   Widget _buildHeader(AppLocalizations localizations) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: 96,
           height: 96,
-          decoration: BoxDecoration(
-            color: Colors.teal,
-            shape: BoxShape.circle,
-          ),
-          child: const Icon(Icons.air, size: 56, color: Colors.white),
+          child: Image.asset("assets/sora_mark.png", fit: BoxFit.contain),
         ),
         const SizedBox(height: 16),
         Text(
-          kAppName,
+          localizations.appName,
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 32,

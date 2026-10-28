@@ -54,7 +54,6 @@ class _MyHomePage extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
-    final imgStr = localizations.localeName == "id" ? "assets/app_id.jpg" : "assets/app_en.jpg";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -137,7 +136,7 @@ class _MyHomePage extends State<MyHomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 64),
-            child: Image(image: AssetImage(imgStr)),
+            child: Image.asset("assets/sora_logo.png"),
           ),
           DecoratedImageButton(
             text: AppLocalizations.of(context)!.diagnose,
