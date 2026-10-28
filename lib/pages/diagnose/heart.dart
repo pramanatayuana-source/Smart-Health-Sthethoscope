@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:smart_health_monitor/components/noise_reduction.dart';
 import 'package:smart_health_monitor/l10n/app_localizations.dart';
 import 'package:camera/camera.dart';
 
@@ -22,14 +23,19 @@ class _DiagnoseHeart extends State<DiagnoseHeart> {
   var debounce = 0;
   var outBpm = 60.0;
 
+  final NoiseReduction _noiseReducer = NoiseReduction(
+    windowSize: DiagnosticSettings.defaultNoiseWindow,
+  );
+
   Future<void> setup() async {
     if (!await Permission.camera.isGranted) {
       await Permission.camera.request();
     }
+    _noiseReducer.enabled = DiagnosticSettings.noiseReductionEnabled;
+    _noiseReducer.reset();
     cameras = await availableCameras();
     _controller = CameraController(cameras.first, ResolutionPreset.high);
 
-    var exposure = 1.5;
     var lastAvg = 0.0;
     var lastBeep = DateTime.now().millisecondsSinceEpoch;
     var averageBPM = 70.0;
@@ -52,6 +58,11 @@ class _DiagnoseHeart extends State<DiagnoseHeart> {
         avg += yPlane.bytes[i];
       }
       avg /= yPlane.bytes.length;
+
+      // Pre-process the luminance signal to suppress camera noise before
+      // peak detection. Toggleable via DiagnosticSettings.noiseReductionEnabled.
+      avg = _noiseReducer.apply(avg);
+
       var diff = avg - lastAvg;
       lastAvg = avg;
 

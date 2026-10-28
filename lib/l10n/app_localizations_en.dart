@@ -12,7 +12,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get diagnose => 'Diagnose';
 
   @override
-  String get appName => 'Digital Monitoring Stethoscope';
+  String get appName => 'RESPIRA';
 
   @override
   String get storage => 'Storage';
@@ -68,6 +68,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get about => 'About';
+
+  @override
+  String get aboutTagline => 'Respiratory Screening & Health Monitoring';
+
+  @override
+  String get aboutDescription =>
+      'RESPIRA is a digital health companion that helps you screen and monitor your respiratory health. Record lung sounds at guided placements, measure your heart rate, track your BMI, and follow a healthier lifestyle, all from your phone.';
+
+  @override
+  String get aboutMissionTitle => 'Our Mission';
+
+  @override
+  String get aboutMission =>
+      'To make early respiratory screening accessible to everyone by turning everyday phones into simple, affordable diagnostic tools.';
+
+  @override
+  String get aboutVersionLabel => 'Version';
+
+  @override
+  String get aboutDeveloperTitle => 'Developed By';
+
+  @override
+  String get aboutDeveloper => 'RESPIRA Development Team';
 
   @override
   String get feedback => 'Feedback';

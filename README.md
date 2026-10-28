@@ -1,6 +1,6 @@
-# Smart Health Monitor
+# RESPIRA
 
-A flutter project aimed at helping you monitor your own health, designed for Android.
+A flutter project aimed at helping you monitor your own respiratory and general health, designed for Android.
 
 # Building and Debugging
 

@@ -107,7 +107,7 @@ abstract class AppLocalizations {
   /// Name of application
   ///
   /// In en, this message translates to:
-  /// **'Digital Monitoring Stethoscope'**
+  /// **'RESPIRA'**
   String get appName;
 
   /// Storage text on home menu
@@ -217,6 +217,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About'**
   String get about;
+
+  /// No description provided for @aboutTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Respiratory Screening & Health Monitoring'**
+  String get aboutTagline;
+
+  /// No description provided for @aboutDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'RESPIRA is a digital health companion that helps you screen and monitor your respiratory health. Record lung sounds at guided placements, measure your heart rate, track your BMI, and follow a healthier lifestyle, all from your phone.'**
+  String get aboutDescription;
+
+  /// No description provided for @aboutMissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Mission'**
+  String get aboutMissionTitle;
+
+  /// No description provided for @aboutMission.
+  ///
+  /// In en, this message translates to:
+  /// **'To make early respiratory screening accessible to everyone by turning everyday phones into simple, affordable diagnostic tools.'**
+  String get aboutMission;
+
+  /// No description provided for @aboutVersionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get aboutVersionLabel;
+
+  /// No description provided for @aboutDeveloperTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Developed By'**
+  String get aboutDeveloperTitle;
+
+  /// No description provided for @aboutDeveloper.
+  ///
+  /// In en, this message translates to:
+  /// **'RESPIRA Development Team'**
+  String get aboutDeveloper;
 
   /// No description provided for @feedback.
   ///

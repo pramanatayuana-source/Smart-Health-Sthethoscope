@@ -12,7 +12,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get diagnose => 'Periksa';
 
   @override
-  String get appName => 'Smart Health Monitor';
+  String get appName => 'RESPIRA';
 
   @override
   String get storage => 'Penyimpanan';
@@ -68,6 +68,29 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get about => 'Tentang';
+
+  @override
+  String get aboutTagline => 'Skrining Pernapasan & Pemantauan Kesehatan';
+
+  @override
+  String get aboutDescription =>
+      'RESPIRA adalah pendamping kesehatan digital yang membantu Anda memeriksa dan memantau kesehatan pernapasan. Rekam suara paru-paru pada titik yang dipandu, ukur detak jantung, pantau BMI, dan jalani gaya hidup sehat, semuanya dari ponsel Anda.';
+
+  @override
+  String get aboutMissionTitle => 'Misi Kami';
+
+  @override
+  String get aboutMission =>
+      'Menjadikan skrining pernapasan dini dapat diakses semua orang dengan mengubah ponsel sehari-hari menjadi alat diagnostik yang sederhana dan terjangkau.';
+
+  @override
+  String get aboutVersionLabel => 'Versi';
+
+  @override
+  String get aboutDeveloperTitle => 'Dikembangkan Oleh';
+
+  @override
+  String get aboutDeveloper => 'Tim Pengembang RESPIRA';
 
   @override
   String get feedback => 'Feedback';

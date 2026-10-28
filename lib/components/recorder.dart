@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:external_path/external_path.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 import 'package:smart_health_monitor/components/buttons.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:smart_health_monitor/components/stetho_audio.dart';
 
 class Recorder extends StatefulWidget {
   final String title;
@@ -35,6 +35,9 @@ class _Recorder extends State<Recorder> {
 
   AudioRecorder? record;
 
+  /// Path of the file being recorded, kept so it can be cleaned on stop.
+  String? _recordingPath;
+
   Future<void> requestPermissions(context) async {
     if (!await Permission.microphone.isGranted) {
       await Permission.microphone.request();
@@ -42,6 +45,25 @@ class _Recorder extends State<Recorder> {
       return;
     }
   }
+
+  /// Capture settings for chest-piece recordings: mono 16 kHz WAV so the
+  /// stethoscope cleanup pipeline can post-process the raw PCM, with the
+  /// device's hardware noise suppressor engaged for convention-floor roar.
+  static const RecordConfig _stethoConfig = RecordConfig(
+    encoder: AudioEncoder.wav,
+    sampleRate: 44100,
+    numChannels: 1,
+    bitRate: 128000,
+    autoGain: true,
+    echoCancel: false,
+    noiseSuppress: true,
+    androidConfig: AndroidRecordConfig(
+      useLegacy: false,
+      muteAudio: true,
+      manageBluetooth: false,
+      audioSource: AndroidAudioSource.unprocessed,
+    ),
+  );
 
   Future<void> startRecording() async {
     if (isRecording) {
@@ -65,8 +87,9 @@ class _Recorder extends State<Recorder> {
 
     var dateStamp = DateTime.now().toIso8601String().replaceAll(":", "_").replaceAll(".", "?");
     var fileName = widget.name;
-    record!.start(const RecordConfig(), path: directory + "/$fileName-$dateStamp.m4a");
-    print(directory + "/$fileName-$dateStamp");
+    final path = "$directory/$fileName-$dateStamp.wav";
+    _recordingPath = path;
+    await record!.start(_stethoConfig, path: path);
 
     _stopwatch.start();
 
@@ -81,9 +104,17 @@ class _Recorder extends State<Recorder> {
     if (!isRecording) {
       return;
     }
-    await record!.stop();
+    final recordedPath = await record!.stop() ?? _recordingPath;
     await record!.dispose();
     record = null;
+
+    // Clean the take before it lands in storage / the analyser.
+    final messenger = ScaffoldMessenger.of(context);
+    final cleaned = await StethoAudio.cleanFile(recordedPath ?? "");
+
+    if (!mounted) {
+      return;
+    }
     setState(() {
       isPaused = false;
       isRecording = false;
@@ -92,7 +123,15 @@ class _Recorder extends State<Recorder> {
       playButtonAsset = "play";
       playButtonColor = Colors.lightGreen;
     });
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Saved ${widget.name}")));
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(
+          cleaned
+              ? "Saved ${widget.name} (noise filtered)"
+              : "Saved ${widget.name}",
+        ),
+      ),
+    );
   }
 
   void setupTimer() {

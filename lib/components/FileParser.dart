@@ -22,7 +22,7 @@ class FileParser {
     return input
         .replaceAll("_", ":")
         .replaceAll("?", ".")
-        .replaceAll(".m4a", "");
+        .replaceAll(RegExp(r"\.(m4a|wav)$"), "");
   }
 
   static DateTime? toDateObject(String input) {
@@ -34,7 +34,7 @@ class FileParser {
     split.removeAt(0);
     var date = split
         .join("-")
-        .replaceAll(".m4a", "")
+        .replaceAll(RegExp(r"\.(m4a|wav)$"), "")
         .replaceAll("?", ".")
         .replaceAll("_", ":");
 

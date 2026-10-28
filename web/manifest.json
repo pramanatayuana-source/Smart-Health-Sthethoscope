@@ -1,11 +1,11 @@
 {
-    "name": "smart_health_monitor",
-    "short_name": "smart_health_monitor",
+    "name": "RESPIRA",
+    "short_name": "RESPIRA",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "RESPIRA - Respiratory screening and health monitoring app.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_health_monitor/components/buttons.dart';
 import 'package:smart_health_monitor/l10n/app_localizations.dart';
@@ -100,9 +99,9 @@ class _MyHomePage extends State<MyHomePage> {
                   Navigator.of(context).pushNamed("/about", arguments: "About");
                 },
               ),
-              ListTile(leading: Icon(Icons.feedback), title: Text("Feedback"), onTap: () => launchUrl(Uri.parse("https://wa.me/6287849441752")),),
+              ListTile(leading: Icon(Icons.feedback), title: Text("Feedback"), onTap: () => launchUrl(Uri.parse("https://wa.me/628123989134")),),
               ListTile(leading: Icon(Icons.chat), title: Text("Chatbot"), onTap: () => launchUrl(Uri.parse("https://wa.me/628983138381?text=.ai hi")),),
-              ListTile(leading: Icon(Icons.chat), title: Text("Testimony"), onTap: () => launchUrl(Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLScdjAym_e3npMhzTPckAmTLqWsRQWXT9_nkI2aoJFm_CEITgg/viewform")),),
+              ListTile(leading: Icon(Icons.chat), title: Text("Testimony"), onTap: () => launchUrl(Uri.parse("https://forms.gle/mtPVXBSVgn7Ma2EYA")),),
               ListTile(
                 leading: Icon(Icons.group),
                 title: Text("Testimonies"),

@@ -20,12 +20,8 @@ android {
     ndkVersion = "28.1.13356709"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     defaultConfig {
@@ -39,6 +35,12 @@ android {
         versionName = flutter.versionName
     }
 
+    buildFeatures {
+        // AGP 9 disabled flavor resValues by default; the app_name/force_language
+        // resources above still rely on them.
+        resValues = true
+    }
+
     flavorDimensions += "default"
     productFlavors {
         create("ID") {
@@ -46,7 +48,7 @@ android {
             resValue(
                 type = "string",
                 name = "app_name",
-                value = "Smart Health Monitor")
+                value = "RESPIRA")
             resValue(
                 type = "string",
                 name = "force_language",
@@ -58,7 +60,7 @@ android {
             resValue(
                 type = "string",
                 name = "app_name",
-                value = "Digital Monitoring Stethoscope")
+                value = "RESPIRA")
             resValue(
                 type = "string",
                 name = "force_language",
@@ -74,6 +76,12 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 
