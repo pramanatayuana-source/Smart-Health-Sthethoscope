@@ -16,7 +16,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('RESPIRA'), findsOneWidget);
+    expect(find.text('SORA'), findsOneWidget);
     expect(find.text('Diagnose'), findsOneWidget);
     expect(find.text('Storage'), findsOneWidget);
     expect(find.text('BMI Calculator'), findsOneWidget);

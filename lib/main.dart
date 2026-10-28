@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     final currentLocale = const String.fromEnvironment("LANG");
 
     return MaterialApp(
-      title: 'RESPIRA',
+      title: 'SORA',
 
       localizationsDelegates: [
         AppLocalizations.delegate,

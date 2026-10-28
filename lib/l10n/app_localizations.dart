@@ -107,7 +107,7 @@ abstract class AppLocalizations {
   /// Name of application
   ///
   /// In en, this message translates to:
-  /// **'RESPIRA'**
+  /// **'SORA'**
   String get appName;
 
   /// Storage text on home menu
@@ -227,7 +227,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutDescription.
   ///
   /// In en, this message translates to:
-  /// **'RESPIRA is a digital health companion that helps you screen and monitor your respiratory health. Record lung sounds at guided placements, measure your heart rate, track your BMI, and follow a healthier lifestyle, all from your phone.'**
+  /// **'SORA is a digital health companion that helps you screen and monitor your respiratory health. Record lung sounds at guided placements, measure your heart rate, track your BMI, and follow a healthier lifestyle, all from your phone.'**
   String get aboutDescription;
 
   /// No description provided for @aboutMissionTitle.
@@ -257,7 +257,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutDeveloper.
   ///
   /// In en, this message translates to:
-  /// **'RESPIRA Development Team'**
+  /// **'SORA Development Team'**
   String get aboutDeveloper;
 
   /// No description provided for @feedback.

@@ -12,7 +12,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get diagnose => 'Periksa';
 
   @override
-  String get appName => 'RESPIRA';
+  String get appName => 'SORA';
 
   @override
   String get storage => 'Penyimpanan';
@@ -74,7 +74,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get aboutDescription =>
-      'RESPIRA adalah pendamping kesehatan digital yang membantu Anda memeriksa dan memantau kesehatan pernapasan. Rekam suara paru-paru pada titik yang dipandu, ukur detak jantung, pantau BMI, dan jalani gaya hidup sehat, semuanya dari ponsel Anda.';
+      'SORA adalah pendamping kesehatan digital yang membantu Anda memeriksa dan memantau kesehatan pernapasan. Rekam suara paru-paru pada titik yang dipandu, ukur detak jantung, pantau BMI, dan jalani gaya hidup sehat, semuanya dari ponsel Anda.';
 
   @override
   String get aboutMissionTitle => 'Misi Kami';
@@ -90,7 +90,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get aboutDeveloperTitle => 'Dikembangkan Oleh';
 
   @override
-  String get aboutDeveloper => 'Tim Pengembang RESPIRA';
+  String get aboutDeveloper => 'Tim Pengembang SORA';
 
   @override
   String get feedback => 'Feedback';

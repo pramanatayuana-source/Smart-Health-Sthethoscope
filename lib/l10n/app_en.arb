@@ -1,7 +1,7 @@
 {
     "@@locale": "en",
     "diagnose": "Diagnose",
-    "appName": "RESPIRA",
+    "appName": "SORA",
     "@appName": {
         "description": "Name of application"
     },
@@ -78,12 +78,12 @@
     },
     "about": "About",
     "aboutTagline": "Respiratory Screening & Health Monitoring",
-    "aboutDescription": "RESPIRA is a digital health companion that helps you screen and monitor your respiratory health. Record lung sounds at guided placements, measure your heart rate, track your BMI, and follow a healthier lifestyle, all from your phone.",
+    "aboutDescription": "SORA is a digital health companion that helps you screen and monitor your respiratory health. Record lung sounds at guided placements, measure your heart rate, track your BMI, and follow a healthier lifestyle, all from your phone.",
     "aboutMissionTitle": "Our Mission",
     "aboutMission": "To make early respiratory screening accessible to everyone by turning everyday phones into simple, affordable diagnostic tools.",
     "aboutVersionLabel": "Version",
     "aboutDeveloperTitle": "Developed By",
-    "aboutDeveloper": "RESPIRA Development Team",
+    "aboutDeveloper": "SORA Development Team",
     "feedback": "Feedback",
     "chatbot": "Chatbot",
     "mealMenu": "Meal Menu",
