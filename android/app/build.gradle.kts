@@ -48,7 +48,7 @@ android {
             resValue(
                 type = "string",
                 name = "app_name",
-                value = "RESPIRA")
+                value = "SORA")
             resValue(
                 type = "string",
                 name = "force_language",
@@ -60,7 +60,7 @@ android {
             resValue(
                 type = "string",
                 name = "app_name",
-                value = "RESPIRA")
+                value = "SORA")
             resValue(
                 type = "string",
                 name = "force_language",

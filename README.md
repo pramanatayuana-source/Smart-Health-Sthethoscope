@@ -1,4 +1,4 @@
-# RESPIRA
+# SORA
 
 A flutter project aimed at helping you monitor your own respiratory and general health, designed for Android.
 

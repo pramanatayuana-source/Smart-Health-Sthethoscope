@@ -1,11 +1,11 @@
 {
-    "name": "RESPIRA",
-    "short_name": "RESPIRA",
+    "name": "SORA",
+    "short_name": "SORA",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "RESPIRA - Respiratory screening and health monitoring app.",
+    "background_color": "#ffffff",
+    "theme_color": "#359B93",
+    "description": "SORA - Respiratory screening and health monitoring app.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
