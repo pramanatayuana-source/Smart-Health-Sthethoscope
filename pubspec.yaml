@@ -64,10 +64,23 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
-flutter_icons:
-  image_path: "assets/app_en.jpg" 
+flutter_launcher_icons:
+  image_path: "branding/sora_icon_1024.png"
   android: true
   ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "branding/sora_icon_1024.png"
+    background_color: "#ffffff"
+    theme_color: "#359B93"
+  windows:
+    generate: true
+    image_path: "branding/sora_icon_1024.png"
+    icon_size: 256
+  macos:
+    generate: true
+    image_path: "branding/sora_icon_1024.png"
 
 # The following section is specific to Flutter packages.
 flutter:
