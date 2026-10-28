@@ -43,3 +43,33 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ---------------------------------------------------------------------------
+# Secrets and private data — never publish these (public repo)
+# ---------------------------------------------------------------------------
+# Android signing (see android/.gitignore too)
+*.jks
+*.keystore
+key.properties
+signing.properties
+# Firebase / Google services config
+google-services.json
+GoogleService-Info.plist
+firebase_options.dart
+# Env files and local overrides
+.env
+.env.*
+*.local
+# Credentials, keys, tokens
+*.p12
+*.pem
+*.key
+secrets.json
+credentials.json
+netrc
+# Flutter/Dart generated local config
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+# Local AI-agent tooling (contains internal notes, not for publication)
+.opencode/
+
